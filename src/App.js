@@ -1,26 +1,36 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+import "./App.css";
+import Layout from "./components/layou/Layout";
+import ToolBar from "./components/ToolBar/ToolBar";
+import SideBar from "./components/SideBar/SideBar";
+class App extends Component {
+  state = {
+    sidebarOpen: false,
+  };
+  onSetSidebarOpen = () => {
+    this.setState({ sidebarOpen: true });
+  };
+
+  render() {
+    return (
+      <div>
+        <SideBar
+          open={this.state.sidebarOpen}
+          onSetOpen={this.onSetSidebarOpen}
+          styles={{ sidebar: { background: "red" } }}
         >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+          <button onClick={() => this.onSetSidebarOpen(true)}>
+            Open sidebar
+          </button>
+        </SideBar>
+        <ToolBar />
+        <Layout>
+          <p>APP </p>
+        </Layout>
+      </div>
+    );
+  }
 }
 
 export default App;

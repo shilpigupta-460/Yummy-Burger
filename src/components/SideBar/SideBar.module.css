@@ -1,0 +1,56 @@
+.sideBar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  background-color: red;
+  box-sizing: border-box;
+  width: 200px;
+  height: 100%;
+  z-index: 200;
+  max-height: 70%;
+  transition: transform 0.3s ease-out;
+}
+@media (min-width: 500px) {
+  .sideBar {
+    display: none;
+  }
+}
+.open {
+  transform: translateX(0);
+}
+.close {
+  transform: translateX(-100%);
+}
+.Nav {
+  float: 1em;
+}
+.menu {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 25px;
+  margin: 0;
+  padding: 41px;
+  list-style: none;
+  font-weight: bold;
+  text-decoration: none;
+  cursor: pointer;
+}
+.menu a {
+  color: red;
+  text-decoration: none;
+}
+.menu a:hover {
+  background-color: rgb(213, 224, 224);
+  color: brown;
+}
+.menu a:active,
+.menu a.active {
+  background-color: aqua;
+  color: brown;
+}
+@media (max-width: 499px) {
+  .desktopOnly {
+    display: none;
+  }
+}

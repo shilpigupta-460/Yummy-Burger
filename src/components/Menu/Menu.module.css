@@ -1,0 +1,30 @@
+.menu {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 25px;
+  margin: 0;
+  padding: 41px;
+  list-style: none;
+  font-weight: bold;
+  text-decoration: none;
+  cursor: pointer;
+}
+.menu a {
+  color: white;
+  text-decoration: none;
+}
+.menu a:hover {
+  background-color: rgb(213, 224, 224);
+  color: brown;
+}
+.menu a:active,
+.menu a.active {
+  background-color: aqua;
+  color: brown;
+}
+@media (max-width: 499px) {
+  .desktopOnly {
+    display: none;
+  }
+}
